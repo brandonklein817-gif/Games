@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beach Games Hub 🌊🎮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="auth">
+  <h1>🏖️ Beach Games Hub</h1>
+  <input id="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+  <button onclick="signup()">Sign Up</button>
+  <button onclick="login()">Login</button>
+  <p id="msg"></p>
+</div>
+
+<div id="app" style="display:none;">
+  <header>
+    <input id="search" placeholder="🔍 Search games" oninput="renderGames()">
+    <button onclick="toggleDark()">🌙</button>
+    <button onclick="toggleStealth()">🧼</button>
+    <button onclick="panic()">🚫 PANIC</button>
+  </header>
+
+  <nav>
+    <button onclick="setCategory('all')">All</button>
+    <button onclick="setCategory('puzzle')">🧩 Puzzle</button>
+    <button onclick="setCategory('action')">⚔️ Action</button>
+    <button onclick="setCategory('multi')">👥 Multiplayer</button>
+  </nav>
+
+  <div id="games"></div>
+</div>
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
